@@ -48,6 +48,9 @@ All these parts will be automatically installed by zc.buildout into an isolated
 directory tree on your development machine. If you want to remove the TyphoonAE
 environment you just have to delete this single directory.
 
+See http://typhoonae.googlecode.com and
+http://code.google.com/p/typhoonae/wiki/GettingStarted for further information.
+
 
 Running the cloud out of the box
 --------------------------------
