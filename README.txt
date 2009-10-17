@@ -87,8 +87,8 @@ You can access the application using a web browser with the following URL::
 Sending and receiving XMPP messages
 -----------------------------------
 
-Create a new account guest@localhost in your XMPP/Jabber client and add
-helloworld@localhost as buddy. Then send 'hello' and the app should answer
+Create a new account guest@<hostname> in your XMPP/Jabber client and add
+helloworld@<hostname> as buddy. Then send 'hello' and the app should answer
 immediately.
 
 
