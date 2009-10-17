@@ -16,6 +16,7 @@
 """Simple hello world application."""
 
 import google.appengine.ext.webapp
+import logging
 import wsgiref.handlers
 
 
@@ -28,7 +29,22 @@ class HelloWorldRequestHandler(google.appengine.ext.webapp.RequestHandler):
         self.response.out.write("<html><body>Hello, World!</body></html>")
 
 
+class XMPPHandler(google.appengine.ext.webapp.RequestHandler):
+    """Handles XMPP messages."""
+
+    def post(self):
+        """Handles post."""
+
+        message = google.appengine.api.xmpp.Message(self.request.POST)
+
+        logging.info("Received XMPP message: %s" % message.body)
+
+        if message.body[0:5].lower() == 'hello':
+             message.reply("Hi, %s!" % message.sender)
+
+
 app = google.appengine.ext.webapp.WSGIApplication([
+    ('/_ah/xmpp/message/chat/', XMPPHandler),
     ('/.*', HelloWorldRequestHandler),
 ], debug=True)
 
