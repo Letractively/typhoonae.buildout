@@ -15,7 +15,7 @@ Contents
   * What will be installed
   * What is new in this release
   * Running the cloud out of the box
-  * Sending and receiving XMPP messages
+  * How to configure your Jabber client to send and receive XMPP messages
   * How to run the guestbook demo application
   * Google's development application server
 
@@ -58,8 +58,7 @@ http://code.google.com/p/typhoonae/wiki/GettingStarted for further information.
 What is new in this release
 ---------------------------
 
-  * Updated to Google App Engine SDK 1.2.7
-  * Added basic XMPP support
+  * Added support for sending XMPP invitations.
   * Several bugfixes (see http://typhoonae.googlecode.com for details)
 
 
@@ -84,12 +83,14 @@ You can access the application using a web browser with the following URL::
   http://localhost:8080/
 
 
-Sending and receiving XMPP messages
------------------------------------
+How to configure your Jabber client to send and receive XMPP messages
+---------------------------------------------------------------------
 
-Create a new account guest@<hostname> in your XMPP/Jabber client and add
-helloworld@<hostname> as buddy. Then send 'hello' and the app should answer
-immediately.
+  * Create a Jabber account guest@<host> where host is the machine on which
+    you're running the server.
+  * The password can be any desired password but must not be empty.
+  * Your Jabber client should use port 5222 (no SSL).
+  * Send an invitation to your newly created account.
 
 
 How to run the guestbook demo application

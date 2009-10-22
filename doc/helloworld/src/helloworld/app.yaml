@@ -8,5 +8,9 @@ inbound_services:
 
 handlers:
 
+- url: /(.*\.css)
+  static_files: css/\1
+  upload: css/(.*\.css)
+
 - url: /.*
   script: app.py

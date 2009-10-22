@@ -15,7 +15,9 @@
 # limitations under the License.
 """Simple hello world application."""
 
+import google.appengine.api.xmpp
 import google.appengine.ext.webapp
+import google.appengine.ext.webapp.template
 import logging
 import wsgiref.handlers
 
@@ -26,7 +28,8 @@ class HelloWorldRequestHandler(google.appengine.ext.webapp.RequestHandler):
     def get(self):
         """Handles get."""
 
-        self.response.out.write("<html><body>Hello, World!</body></html>")
+        index = google.appengine.ext.webapp.template.render('index.html', {})
+        self.response.out.write(index)
 
 
 class XMPPHandler(google.appengine.ext.webapp.RequestHandler):
@@ -43,8 +46,22 @@ class XMPPHandler(google.appengine.ext.webapp.RequestHandler):
              message.reply("Hi, %s!" % message.sender)
 
 
+class InviteHandler(google.appengine.ext.webapp.RequestHandler):
+    """Invites one to a XMPP chat."""
+
+    def post(self):
+        """Handles post."""
+
+        jid = self.request.get('jid')
+        if google.appengine.api.xmpp.get_presence(jid):
+            google.appengine.api.xmpp.send_invite(jid)
+
+        self.redirect('/')
+
+
 app = google.appengine.ext.webapp.WSGIApplication([
     ('/_ah/xmpp/message/chat/', XMPPHandler),
+    ('/invite', InviteHandler),
     ('/.*', HelloWorldRequestHandler),
 ], debug=True)
 

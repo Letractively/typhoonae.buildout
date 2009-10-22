@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C //DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css" media="all" />
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <p>
+    <h2>How to configure your Jabber client?</h2>
+    <ul>
+      <li>Create a Jabber account guest@<b>&lt;host&gt;</b> where
+        <b>host</b> is the machine on which you're running the server.</li>
+      <li>The password can be any desired password but must not be empty.</li>
+      <li>Your Jabber client should use port 5222 (no SSL).</li>
+      <li>Use the form below to send an invitation to your newly created
+        account.</li>
+    </ul>
+    <p>
+      Send XMPP invitation to:
+      <form action="invite" method="POST">
+        <label for="jid">JID</label>
+        <input name="jid" id="jid" />
+        <input type="submit" value="Send" />
+      </form>
+    </p>
+  </body>
+</html>
