@@ -39,6 +39,7 @@ to provide concurrency, better caching, horizontal scalability and
 fault-tolerance. It integrates various open source products.
 
   * mongoDB - http://www.mongodb.org
+  * BDBDatastore - http://arachnid.github.com/bdbdatastore
   * memcached - http://www.danga.com/memcached/
   * RabbitMQ - http://www.rabbitmq.com
   * ejabberd - http://www.process-one.net/en/ejabberd
@@ -58,7 +59,7 @@ http://code.google.com/p/typhoonae/wiki/GettingStarted for further information.
 What is new in this release
 ---------------------------
 
-  * Added support for sending XMPP invitations.
+  * Added BDBDatastore support
   * Several bugfixes (see http://typhoonae.googlecode.com for details)
 
 
@@ -72,7 +73,7 @@ Build the whole stack by typing the following commands::
 
 Configure the 'helloworld' application::
 
-  $ ./bin/apptool parts/helloworld/
+  $ ./bin/apptool --xmpp_host=<host> parts/helloworld/
 
 Run the supervisor daemon which starts and controls all services at once::
 
@@ -111,6 +112,15 @@ Run the supervisor daemon::
 You can access the guestbook using a web browser with the following URL::
 
   http://localhost:8080/
+
+
+How to configere BDBDatastore as alternate datastore
+----------------------------------------------------
+
+BDBDatastore is an alternate datastore backend for App Engine apps. You can
+easy configure it with apptool::
+
+  $ ./bin/apptool --datastore=bdbdatastore parts/google_appengine/demos/guestbook/
 
 
 Google's development application server
