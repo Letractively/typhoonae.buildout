@@ -117,10 +117,27 @@ You can access the guestbook using a web browser with the following URL::
 How to configere BDBDatastore as alternate datastore
 ----------------------------------------------------
 
-BDBDatastore is an alternate datastore backend for App Engine apps. You can
-easy configure it with apptool::
+BDBDatastore is an alternate datastore backend for App Engine, implemented
+using BDB JE. It requires JAVA installed in your machine.
 
-  $ ./bin/apptool --datastore=bdbdatastore parts/google_appengine/demos/guestbook/
+Use apptool to configure enable BDBDatastore::
+
+  $ bin/apptool --datastore=bdbdatastore parts/google_appengine/demos/guestbook/
+
+Don't forget to create the index.yaml file::
+
+  $ cat > parts/google_appengine/demos/guestbook/index.yaml
+  indexes:
+
+  - kind: Greeting
+    properties:
+    - name: date
+      direction: desc
+  <ctrl-c>
+
+Then run the supervisord by typing::
+
+  $ bin/supervisord
 
 
 Google's development application server
