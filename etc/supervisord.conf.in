@@ -26,14 +26,6 @@ redirect_stderr = true
 environment = LD_LIBRARY_PATH=${buildout:directory}/parts/libevent/lib
 stdout_logfile = ${buildout:directory}/var/log/memcached.log
 
-[program:mongod]
-command = ${buildout:directory}/bin/mongod --dbpath=${buildout:directory}/var
-process_name = mongod
-directory = ${buildout:directory}/bin
-priority = 10
-redirect_stderr = true
-stdout_logfile = ${buildout:directory}/var/log/mongod.log
-
 [program:rabbitmq]
 command = ${buildout:directory}/bin/rabbitmq-server
 process_name = rabbitmq
@@ -49,15 +41,6 @@ directory = ${buildout:directory}
 priority = 10
 redirect_stderr = true
 stdout_logfile = ${buildout:directory}/var/log/ejabberd.log
-
-[program:intid]
-command = ${buildout:directory}/bin/intid 
-process_name = intid
-directory = ${buildout:directory}
-priority = 20
-redirect_stderr = true
-stdout_logfile = ${buildout:directory}/var/log/intid.log
-stopsignal = INT
 
 [program:taskworker]
 command = ${buildout:directory}/bin/taskworker 
