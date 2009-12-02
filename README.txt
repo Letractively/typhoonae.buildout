@@ -64,7 +64,10 @@ What is new in this release
 ---------------------------
 
   * Added BDBDatastore support
-  * Several bugfixes (see http://typhoonae.googlecode.com for details)
+  * Several bugfixes
+
+Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
+detailed overview of the changes.
 
 
 Running all services out of the box
