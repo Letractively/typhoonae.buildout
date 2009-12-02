@@ -14,10 +14,12 @@ Contents
   * Copyright and license
   * What will be installed
   * What is new in this release
-  * Running the cloud out of the box
+  * Running all services out of the box
   * How to configure your Jabber client to send and receive XMPP messages
   * How to run the guestbook demo application
+  * How to configere BDBDatastore as alternate datastore
   * Google's development application server
+  * Contact and bug reports
 
 
 Copyright and license
@@ -47,13 +49,15 @@ fault-tolerance. It integrates various open source products.
   * nginx - http://nginx.net/
   * Supervisor - http://supervisord.org
   * Google App Engine SDK 1.2.7 - http://code.google.com/appengine
+  and ...
+  * TyphoonAE 0.1.0b2 - http://pypi.python.org/pypi/typhoonae/0.1.0b2
 
 All these parts will be automatically installed by zc.buildout into an isolated
 directory tree on your development machine. If you want to remove the TyphoonAE
 environment you just have to delete this single directory.
 
-See http://typhoonae.googlecode.com and
-http://code.google.com/p/typhoonae/wiki/GettingStarted for further information.
+See http://code.google.com/p/typhoonae/wiki/GettingStarted for further
+information.
 
 
 What is new in this release
@@ -63,8 +67,8 @@ What is new in this release
   * Several bugfixes (see http://typhoonae.googlecode.com for details)
 
 
-Running the cloud out of the box
---------------------------------
+Running all services out of the box
+-----------------------------------
 
 Build the whole stack by typing the following commands::
 
@@ -150,3 +154,12 @@ installed original SDK.
 It can be used as expected::
 
   $ bin/dev_appserver parts/helloworld
+
+
+Contact and bug reports
+-----------------------
+
+If you have any further questions, please do not hesitate to visit the Google
+Group for TyphoonAE http://groups.google.com/group/typhoonae.
+
+Please use http://code.google.com/p/typhoonae/issues/list to report bugs.
