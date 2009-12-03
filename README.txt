@@ -142,7 +142,7 @@ Don't forget to create the index.yaml file::
       direction: desc
   <ctrl-c>
 
-Then run the supervisord by typing::
+Then run the supervisor daemon by typing::
 
   $ bin/supervisord
 
