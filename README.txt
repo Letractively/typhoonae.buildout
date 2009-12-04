@@ -48,7 +48,7 @@ fault-tolerance. It integrates various open source products.
   * FastCGI - http://www.fastcgi.com
   * nginx - http://nginx.net/
   * Supervisor - http://supervisord.org
-  * Google App Engine SDK 1.2.7 - http://code.google.com/appengine
+  * Google App Engine SDK 1.2.8 - http://code.google.com/appengine
   and ...
   * TyphoonAE 0.1.0b2 - http://pypi.python.org/pypi/typhoonae/0.1.0b2
 
