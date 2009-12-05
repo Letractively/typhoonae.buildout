@@ -127,7 +127,7 @@ How to configere BDBDatastore as alternate datastore
 BDBDatastore is an alternate datastore backend for App Engine, implemented
 using BDB JE. It requires JAVA installed in your machine.
 
-Use apptool to configure enable BDBDatastore::
+Use apptool to enable BDBDatastore::
 
   $ bin/apptool --datastore=bdbdatastore parts/google_appengine/demos/guestbook/
 
