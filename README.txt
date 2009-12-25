@@ -48,9 +48,9 @@ fault-tolerance. It integrates various open source products.
   * FastCGI - http://www.fastcgi.com
   * nginx - http://nginx.net/
   * Supervisor - http://supervisord.org
-  * Google App Engine SDK 1.2.8 - http://code.google.com/appengine
+  * Google App Engine SDK 1.3.0 - http://code.google.com/appengine
   and ...
-  * TyphoonAE 0.1.0b2 - http://pypi.python.org/pypi/typhoonae/0.1.0b2
+  * TyphoonAE 0.1.1 - http://pypi.python.org/pypi/typhoonae/0.1.1
 
 All these parts will be automatically installed by zc.buildout into an isolated
 directory tree on your development machine. If you want to remove the TyphoonAE
@@ -63,7 +63,9 @@ information.
 What is new in this release
 ---------------------------
 
-  * Added BDBDatastore support
+  * Support for Google App Engine SDK 1.3.0
+  * Blobstore API
+  * The apptool and fcgiserver takes more command line options
   * Several bugfixes
 
 Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
@@ -80,7 +82,7 @@ Build the whole stack by typing the following commands::
 
 Configure the 'helloworld' application::
 
-  $ ./bin/apptool --xmpp_host=<host> parts/helloworld/
+  $ ./bin/apptool parts/helloworld/
 
 Run the supervisor daemon which starts and controls all services at once::
 
@@ -88,14 +90,14 @@ Run the supervisor daemon which starts and controls all services at once::
 
 You can access the application using a web browser with the following URL::
 
-  http://localhost:8080/
+  http://<your.domain>:8080/
 
 
 How to configure your Jabber client to send and receive XMPP messages
 ---------------------------------------------------------------------
 
-  * Create a Jabber account guest@<host> where host is the machine on which
-    you're running the server.
+  * Create a Jabber account guest@<fully qualified domain name> where host
+    is the machine on which you're running the server.
   * The password can be any desired password but must not be empty.
   * Your Jabber client should use port 5222 (no SSL).
   * Send an invitation to your newly created account.
@@ -118,7 +120,7 @@ Run the supervisor daemon::
 
 You can access the guestbook using a web browser with the following URL::
 
-  http://localhost:8080/
+  http://<your.domain>:8080/
 
 
 How to configere BDBDatastore as alternate datastore
