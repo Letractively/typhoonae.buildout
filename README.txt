@@ -96,7 +96,7 @@ You can access the application using a web browser with the following URL::
 How to configure your Jabber client to send and receive XMPP messages
 ---------------------------------------------------------------------
 
-  * Create a Jabber account guest@<fully qualified domain name> where host
+  * Create a Jabber account guest@<your.domain> where host
     is the machine on which you're running the server.
   * The password can be any desired password but must not be empty.
   * Your Jabber client should use port 5222 (no SSL).
