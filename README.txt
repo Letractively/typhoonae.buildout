@@ -64,8 +64,8 @@ What is new in this release
 ---------------------------
 
   * Support for Google App Engine SDK 1.3.0
-  * Blobstore API
-  * The apptool and fcgiserver takes more command line options
+  * Blobstore
+  * Optional HTTP Basic Authentication
   * Several bugfixes
 
 Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
