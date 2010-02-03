@@ -25,7 +25,7 @@ Contents
 Copyright and license
 ---------------------
 
-Copyright 2009 Tobias Rodäbel
+Copyright 2009, 2010 Tobias Rodäbel
 
 This software is released under the Apache License, Version 2.0. You may obtain
 a copy of the License at
@@ -45,12 +45,13 @@ fault-tolerance. It integrates various open source products.
   * memcached - http://www.danga.com/memcached/
   * RabbitMQ - http://www.rabbitmq.com
   * ejabberd - http://www.process-one.net/en/ejabberd
+  * tornado - http://www.tornadoweb.org
   * FastCGI - http://www.fastcgi.com
   * nginx - http://nginx.net/
   * Supervisor - http://supervisord.org
   * Google App Engine SDK 1.3.0 - http://code.google.com/appengine
   and ...
-  * TyphoonAE 0.1.1 - http://pypi.python.org/pypi/typhoonae/0.1.1
+  * TyphoonAE 0.1.2 - http://pypi.python.org/pypi/typhoonae/0.1.2
 
 All these parts will be automatically installed by zc.buildout into an isolated
 directory tree on your development machine. If you want to remove the TyphoonAE
@@ -63,9 +64,8 @@ information.
 What is new in this release
 ---------------------------
 
-  * Support for Google App Engine SDK 1.3.0
-  * Blobstore
-  * Optional HTTP Basic Authentication
+  * Experimental Web Socket service API.
+  * Commandline options to configure the HTTP port and SMTP host.
   * Several bugfixes
 
 Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
