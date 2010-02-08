@@ -65,6 +65,7 @@ What is new in this release
 ---------------------------
 
   * Experimental Web Socket service API.
+  * Support for remote GAE Datastore.
   * Commandline options to configure the HTTP port and SMTP host.
   * Several bugfixes
 
