@@ -49,9 +49,9 @@ fault-tolerance. It integrates various open source products.
   * FastCGI - http://www.fastcgi.com
   * nginx - http://nginx.net/
   * Supervisor - http://supervisord.org
-  * Google App Engine SDK 1.3.0 - http://code.google.com/appengine
+  * Google App Engine SDK 1.3.1 - http://code.google.com/appengine
   and ...
-  * TyphoonAE 0.1.2 - http://pypi.python.org/pypi/typhoonae/0.1.2
+  * TyphoonAE 0.1.3 - http://pypi.python.org/pypi/typhoonae/0.1.3
 
 All these parts will be automatically installed by zc.buildout into an isolated
 directory tree on your development machine. If you want to remove the TyphoonAE
@@ -64,9 +64,9 @@ information.
 What is new in this release
 ---------------------------
 
-  * Experimental Web Socket service API.
-  * Support for remote GAE Datastore.
-  * Commandline options to configure the HTTP port and SMTP host.
+  * Support for Google App Engine SDK 1.3.1.
+  * MongoDB backend supports Datastore Query Cursors.
+  * Commandline option for development mode (disables caching of modules).
   * Several bugfixes
 
 Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
