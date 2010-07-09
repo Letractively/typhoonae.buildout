@@ -176,7 +176,16 @@ Using the MySQL backed Datastore
 ================================
 
 With TyphoonAE you can use a MySQL server as alternate Datastore backend. Since
-we don't include MySQL in our buildout configuration, you have to install it.
+we don't include MySQL in our buildout configuration, you have to install it
+manually.
+
+Configure the MySQL Datastore by typing::
+
+  $ bin/apptool --datastore=mysql parts/google_appengine/demos/guestbook/
+
+There are a number of special command line options to configure a different
+host or custom authentication credentials. Use the --help option for further
+information.
 
 
 How to configere BDBDatastore as alternate Datastore
