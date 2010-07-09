@@ -9,21 +9,23 @@ Google's API.
 
 
 Contents
---------
+========
 
-  * Copyright and license
+  * Copyright and License
   * What will be installed
+  * Before you install
   * What is new in this release
   * Running all services out of the box
-  * How to configure your Jabber client to send and receive XMPP messages
   * How to run the guestbook demo application
-  * How to configere BDBDatastore as alternate datastore
+  * Using the MySQL backed Datastore
+  * How to configere BDBDatastore as alternate Datastore
+  * How to configure your Jabber client to send and receive XMPP messages
   * Google's development application server
-  * Contact and bug reports
+  * Contact
 
 
-Copyright and license
----------------------
+Copyright and License
+=====================
 
 Copyright 2009, 2010 Tobias Rodäbel
 
@@ -34,7 +36,7 @@ a copy of the License at
 
 
 What will be installed
-----------------------
+======================
 
 The main principles in the design of TyphoonAE are decoupling and statelessness
 to provide concurrency, better caching, horizontal scalability and
@@ -62,7 +64,7 @@ information.
 
 
 What is new in this release
----------------------------
+===========================
 
   * Support for Google App Engine SDK 1.3.5.
   * Introducing MySQL backed Datastore.
@@ -74,8 +76,63 @@ Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
 detailed overview of the changes.
 
 
+Before you install
+==================
+
+Python Interpreter
+------------------
+
+It is possible to run TyphoonAE's Python parts with Python 2.5.x and 2.6.x, but
+it is recommended to use a version which is supported by the Google App Engine
+SDK. See http://code.google.com/intl/de/appengine/docs/python/overview.html for
+further information.
+
+We recommend to install TyphoonAE into a virtualenv in order to obtain
+isolation from any 'system' packages you've got installed in your Python
+version. If you are using OS X it is not recommended to use the system's
+Python. Here is how to build your own suitable Python.
+
+Google App Engine SDK
+---------------------
+
+You don't have to install the Google App Engine SDK, because zc.buildout will
+install it for you.
+
+Other Requirements
+------------------
+
+Most of the required libraries and programs will be installed by zc.buildout.
+
+The buildout needs Python and the tools contained in /bin and /usr/bin of a
+standard installation of the Linux operating environment. You should ensure
+that these directories are on your PATH and following programs can be found::
+
+  * Python 2.5.2+ (3.x is not supported!)
+  * gcc and g++
+  * make
+  * JAVA
+  * locally installed sendmail (if you want to send emails)
+  * Erlang
+  * MySQL (if you want to use it as alternate Datastore backend)
+
+On Debian Lenny you will need to have the following packages installed::
+
+  * libmysql++-dev
+  * libncurses5-dev
+  * libssl-dev
+  * python-dev
+  * libexpat-dev (libexpat1-dev)
+  * gettext
+  * erlang-nox and erlang-dev
+
+The Images API uses the Python Imaging Library to transform images. TyphoonAE's
+buildout does not set up PIL for you. You'll need to download the PIL module
+and install it. For instance, on Debian use apt-get to install the
+python-imaging package.
+
+
 Running all services out of the box
------------------------------------
+===================================
 
 Build the whole stack by typing the following commands::
 
@@ -95,18 +152,8 @@ You can access the application using a web browser with the following URL::
   http://<your.domain>:8080/
 
 
-How to configure your Jabber client to send and receive XMPP messages
----------------------------------------------------------------------
-
-  * Create a Jabber account guest@<your.domain> where host
-    is the machine on which you're running the server.
-  * The password can be any desired password but must not be empty.
-  * Your Jabber client should use port 5222 (no SSL).
-  * Send an invitation to your newly created account.
-
-
 How to run the guestbook demo application
------------------------------------------
+=========================================
 
 Shutdown the supervisor by typing::
 
@@ -125,10 +172,17 @@ You can access the guestbook using a web browser with the following URL::
   http://<your.domain>:8080/
 
 
-How to configere BDBDatastore as alternate datastore
-----------------------------------------------------
+Using the MySQL backed Datastore
+================================
 
-BDBDatastore is an alternate datastore backend for App Engine, implemented
+With TyphoonAE you can use a MySQL server as alternate Datastore backend. Since
+we don't include MySQL in our buildout configuration, you have to install it.
+
+
+How to configere BDBDatastore as alternate Datastore
+====================================================
+
+BDBDatastore is an alternate Datastore backend for App Engine, implemented
 using BDB JE. It requires JAVA installed in your machine.
 
 Use apptool to enable BDBDatastore::
@@ -151,8 +205,18 @@ Then run the supervisor daemon by typing::
   $ bin/supervisord
 
 
+How to configure your Jabber client to send and receive XMPP messages
+=====================================================================
+
+  * Create a Jabber account guest@<your.domain> where host
+    is the machine on which you're running the server.
+  * The password can be any desired password but must not be empty.
+  * Your Jabber client should use port 5222 (no SSL).
+  * Send an invitation to your newly created account.
+
+
 Google's development application server
----------------------------------------
+=======================================
 
 You may recognize the dev_appserver script in the bin directory after building
 the environment. It's included to check whether your application runs with the
@@ -163,8 +227,8 @@ It can be used as expected::
   $ bin/dev_appserver parts/helloworld
 
 
-Contact and bug reports
------------------------
+Contact
+=======
 
 If you have any further questions, please do not hesitate to visit the Google
 Group for TyphoonAE http://groups.google.com/group/typhoonae.
