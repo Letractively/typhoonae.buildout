@@ -49,9 +49,9 @@ fault-tolerance. It integrates various open source products.
   * FastCGI - http://www.fastcgi.com
   * nginx - http://nginx.net/
   * Supervisor - http://supervisord.org
-  * Google App Engine SDK 1.3.3 - http://code.google.com/appengine
+  * Google App Engine SDK 1.3.5 - http://code.google.com/appengine
   and ...
-  * TyphoonAE 0.1.4 - http://pypi.python.org/pypi/typhoonae/0.1.4
+  * TyphoonAE 0.1.5 - http://pypi.python.org/pypi/typhoonae/0.1.5
 
 All these parts will be automatically installed by zc.buildout into an isolated
 directory tree on your development machine. If you want to remove the TyphoonAE
@@ -64,9 +64,11 @@ information.
 What is new in this release
 ---------------------------
 
-  * Support for Google App Engine SDK 1.3.3.
-  * Uses up-to-date versions of memcached, MongoDB and ejabberd.
-  * Several bugfixes.
+  * Support for Google App Engine SDK 1.3.5.
+  * Introducing MySQL backed Datastore.
+  * Added support for running multiple applications at once.
+  * SSL support.
+  * Various bugfixes.
 
 Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
 detailed overview of the changes.
@@ -108,7 +110,7 @@ How to run the guestbook demo application
 
 Shutdown the supervisor by typing::
 
-  $ bin/supervisorctl -c etc/supervisord.conf -u admin -p admin shutdown
+  $ bin/supervisorctl shutdown
 
 Configure the guestbook application::
 
