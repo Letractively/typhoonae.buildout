@@ -51,9 +51,9 @@ fault-tolerance. It integrates various open source products.
   * FastCGI - http://www.fastcgi.com
   * nginx - http://nginx.net/
   * Supervisor - http://supervisord.org
-  * Google App Engine SDK 1.3.5 - http://code.google.com/appengine
+  * Google App Engine SDK 1.4.0 - http://code.google.com/appengine
   and ...
-  * TyphoonAE 0.1.5 - http://pypi.python.org/pypi/typhoonae/0.1.5
+  * TyphoonAE 0.2.0 - http://pypi.python.org/pypi/typhoonae/0.2.0
 
 All these parts will be automatically installed by zc.buildout into an isolated
 directory tree on your development machine. If you want to remove the TyphoonAE
@@ -66,11 +66,13 @@ information.
 What is new in this release
 ===========================
 
-  * Support for Google App Engine SDK 1.3.5.
-  * Introducing MySQL backed Datastore.
-  * Added support for running multiple applications at once.
-  * SSL support.
-  * Various bugfixes.
+  * Support for Google App Engine SDK 1.4.0
+  * Implements Channel API backed by the NGINX push module
+  * Adds experimental support for the appcfg.py upload command
+  * Incoming Mail Service using IMAP
+  * Using Celery as alternative Task Queue backend
+  * Updated Web Socket Service to provide the latest Web Socket protocol
+  * Various bugfixes
 
 Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
 detailed overview of the changes.
@@ -121,6 +123,7 @@ On Debian Lenny you will need to have the following packages installed::
   * libncurses5-dev
   * libssl-dev
   * python-dev
+  * python-setuptools
   * libexpat-dev (libexpat1-dev)
   * gettext
   * erlang-nox and erlang-dev
