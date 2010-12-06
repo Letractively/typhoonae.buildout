@@ -12,9 +12,9 @@ Contents
 ========
 
   * Copyright and License
+  * What is new in this release
   * What will be installed
   * Before you install
-  * What is new in this release
   * Running all services out of the box
   * How to run the guestbook demo application
   * Using the MySQL backed Datastore
@@ -33,6 +33,21 @@ This software is released under the Apache License, Version 2.0. You may obtain
 a copy of the License at
 
   http://www.apache.org/licenses/LICENSE-2.0
+
+
+What is new in this release
+===========================
+
+  * Support for Google App Engine SDK 1.4.0
+  * Implements Channel API backed by the NGINX push module
+  * Adds experimental support for the appcfg.py update command
+  * Incoming Mail Service using IMAP
+  * Using Celery as alternative Task Queue backend
+  * Updated Web Socket Service to provide the latest Web Socket protocol
+  * Various bugfixes
+
+Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
+detailed overview of the changes.
 
 
 What will be installed
@@ -61,21 +76,6 @@ environment you just have to delete this single directory.
 
 See http://code.google.com/p/typhoonae/wiki/GettingStarted for further
 information.
-
-
-What is new in this release
-===========================
-
-  * Support for Google App Engine SDK 1.4.0
-  * Implements Channel API backed by the NGINX push module
-  * Adds experimental support for the appcfg.py update command
-  * Incoming Mail Service using IMAP
-  * Using Celery as alternative Task Queue backend
-  * Updated Web Socket Service to provide the latest Web Socket protocol
-  * Various bugfixes
-
-Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
-detailed overview of the changes.
 
 
 Before you install
@@ -152,7 +152,7 @@ Run the supervisor daemon which starts and controls all services at once::
 
 You can access the application using a web browser with the following URL::
 
-  http://<your.domain>:8080/
+  http://localhost:8080/
 
 
 How to run the guestbook demo application
@@ -172,7 +172,7 @@ Run the supervisor daemon::
 
 You can access the guestbook using a web browser with the following URL::
 
-  http://<your.domain>:8080/
+  http://localhost:8080/
 
 
 Using the MySQL backed Datastore
