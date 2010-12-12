@@ -34,6 +34,8 @@ a copy of the License at
 
   http://www.apache.org/licenses/LICENSE-2.0
 
+Google App Engine is a trademark of Google Inc.
+
 
 What is new in this release
 ===========================
