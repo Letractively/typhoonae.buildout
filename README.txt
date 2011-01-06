@@ -40,12 +40,7 @@ Google App Engine is a trademark of Google Inc.
 What is new in this release
 ===========================
 
-  * Support for Google App Engine SDK 1.4.0
-  * Implements Channel API backed by the NGINX push module
-  * Adds experimental support for the appcfg.py update command
-  * Incoming Mail Service using IMAP
-  * Using Celery as alternative Task Queue backend
-  * Updated Web Socket Service to provide the latest Web Socket protocol
+  * Support for Google App Engine SDK 1.4.1
   * Various bugfixes
 
 Visit http://code.google.com/p/typhoonae/wiki/ReleaseNotes to get a more
